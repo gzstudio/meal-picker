@@ -50,7 +50,7 @@ class Spinner extends React.Component {
         const spinning = selectedItem !== null ? 'spinning' : '';
     
         return (
-          <StyledSpinnerWrapper>
+          <div className="wheel-container">
             <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
               {items.map((item, index) => (
                 <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
@@ -58,7 +58,7 @@ class Spinner extends React.Component {
                 </div>
               ))}
             </div>
-          </StyledSpinnerWrapper>
+          </div>
         );
       }
 }
