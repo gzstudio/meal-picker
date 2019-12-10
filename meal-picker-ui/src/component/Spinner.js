@@ -1,21 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
 import './Spinner.css'
 
 
-const StyledSpinnerWrapper = styled.div`
-    display: block;
-    position: relative;
-    box-sizing: content-box;
-    width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
-    height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
-    padding: 3px;
-    margin: auto;
-    background-color: var(--neutral-color);
-    border: solid var(--wheel-color) 3px;
-    border-radius: 50%;
-    user-select: none;
-`
 
 class Spinner extends React.Component {
     constructor(props) {
@@ -36,6 +22,7 @@ class Spinner extends React.Component {
         } else {
           this.setState({ selectedItem: null });
           setTimeout(this.selectItem, 500);
+          console.log(this.selectedItem);
         }
       }
     
@@ -50,7 +37,7 @@ class Spinner extends React.Component {
         const spinning = selectedItem !== null ? 'spinning' : '';
     
         return (
-          <StyledSpinnerWrapper>
+          <div className="wheel-container">
             <div className={`wheel ${spinning}`} style={wheelVars} onClick={this.selectItem}>
               {items.map((item, index) => (
                 <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
@@ -58,7 +45,7 @@ class Spinner extends React.Component {
                 </div>
               ))}
             </div>
-          </StyledSpinnerWrapper>
+          </div>
         );
       }
 }
