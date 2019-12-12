@@ -34,7 +34,7 @@ class Home extends React.Component {
   
 
       }
-
+      
       render(props) {
         const sample = _.sampleSize(this.state.favCuisines, 15)
         console.log(sample)

@@ -1,7 +1,7 @@
 .card-container {
     width: 100%;
     display: block;
-    width: 300px;
+    max-width: 400px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 2px 11px 10px 0 rgba(0,0,0,0.10);
@@ -14,10 +14,11 @@
 }
 
 .card-img img {
-    max-width: 300px;
+    
     height: 250px;
     object-fit: cover;
-    
+    border-top-left-radius: calc(1rem - 5px);
+    border-top-right-radius: calc(1rem - 5px);
 }
 
 .card-img--hover img{

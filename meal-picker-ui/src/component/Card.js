@@ -17,7 +17,7 @@ class Card extends React.Component {
         <div className="card-container">
             <div className="heart"><Heart /></div>
             <div className="card-img">
-                <img src={this.props.card_img} />
+                <img className="img-fluid" src={this.props.card_img} />
             </div>
             <a href="#" className="card-link">
                 <div className="card-img--hover">
@@ -27,7 +27,7 @@ class Card extends React.Component {
                 <span className="cuisine">{this.props.cuisine}</span>
                 <h3 className="resturant-title">{this.props.resturant_title}</h3>
                 <div className="location">
-                    <div className="pin"></div><span className="location_name"><MapPin/>{this.props.location_name}</span>
+                    <div className="pin"><MapPin/></div><span className="location_name">{this.props.location_name}</span>
                 </div>
             </div>
             </a>       
