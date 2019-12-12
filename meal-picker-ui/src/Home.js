@@ -3,6 +3,7 @@ import Spinner from './component/Spinner'
 import Axios from 'axios'
 import _ from 'lodash'
 
+
 class Home extends React.Component {
     constructor() {
         super();
@@ -12,8 +13,6 @@ class Home extends React.Component {
       }
 
       }
-
-     
       componentDidMount(){
         const url_key = 'ce01c524c280392f934d5bb8228b2277'
         Axios({
@@ -35,26 +34,6 @@ class Home extends React.Component {
   
 
       }
-      
-      componentDidMount () {
-        const url_key = '7a0bd3849072d2062b7589cf8c8ab6e3'
-        Axios({
-           method: "GET",
-           url: `https://developers.zomato.com/api/v2.1/cuisines?city_id=260`,
-           headers: {
-             "user-key": url_key,
-             "content-type": "application/json"
-           }
-         })
-           .then(response => {
-               const cuisineName = response.data.cuisines;
-               this.setState({cousineName: cuisineName})
-               console.log(cuisineName)
-           })
-           .catch(error => {   
-             console.log(error);
-           });
-   }
 
       render(props) {
         const sample = _.sampleSize(this.state.favCuisines, 15)
@@ -66,7 +45,7 @@ class Home extends React.Component {
             <div className="App">
               <h1>What should I eat for </h1>
               <Spinner items={getName} />
-             
+
             </div>
           );
 

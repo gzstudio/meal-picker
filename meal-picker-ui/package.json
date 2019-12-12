@@ -7,12 +7,13 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.0",
-<<<<<<< HEAD
-=======
+    "bootstrap": "^4.4.1",
+    "feather-icons": "^4.25.0",
     "lodash": "^4.17.15",
->>>>>>> e14c84fa9767b79a235014b56af0f3e63117ba57
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
+    "react-feather": "^2.0.3",
     "react-scripts": "3.3.0",
     "styled-components": "^4.4.1"
   },
