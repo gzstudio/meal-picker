@@ -2,6 +2,8 @@ import React from 'react'
 import Spinner from './component/Spinner'
 import Axios from 'axios'
 import _ from 'lodash'
+// import { Link } from 'react-feather';
+
 
 
 class Home extends React.Component {
@@ -11,7 +13,6 @@ class Home extends React.Component {
         this.state = {
         favCuisines: []
       }
-
       }
       componentDidMount(){
         const url_key = 'ce01c524c280392f934d5bb8228b2277'
@@ -41,12 +42,20 @@ class Home extends React.Component {
         const getName = sample.map((e, id) => (
         <p key={id}>{e.cuisine.cuisine_name}</p> 
         ))
+        const getnames = sample.map((e, id) => (
+          <p key={id}>{e.cuisine.cuisine_name}</p> 
+          ))
         return (
             <div className="App">
               <h1>What should I eat for </h1>
               <Spinner items={getName} />
-
+              <div>
+               <ul>
+                {getnames}
+               </ul>
             </div>
+            </div>
+            
           );
 
       }

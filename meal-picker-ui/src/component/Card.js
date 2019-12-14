@@ -19,7 +19,7 @@ class Card extends React.Component {
             <div className="card-img">
                 <img className="img-fluid" src={this.props.card_img} />
             </div>
-            <a href="#" className="card-link">
+            <span  className="card-link">
                 <div className="card-img--hover">
                 {/* <img src={this.props.card_img} /> */}
                 </div>
@@ -30,7 +30,7 @@ class Card extends React.Component {
                     <div className="pin"><MapPin/></div><span className="location_name">{this.props.location_name}</span>
                 </div>
             </div>
-            </a>       
+            </span>       
         </div>
     
     )}
