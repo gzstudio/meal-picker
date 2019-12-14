@@ -1,5 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
+import _ from 'lodash'
 
 export default class ResDetails extends React.Component{
    
@@ -30,9 +31,24 @@ export default class ResDetails extends React.Component{
       }
     render(){
 
+      let resImg = this.state.res_info.photos
+
+      // const getUrl = resImg && resImg.map(photo => (
+      //   <div>
+      //       <img src={photo.photo.url}/>
+      //   </div>
+      // ))
+      // console.log(resImg)
         return(
             <div>
                 <h1>{this.state.res_info.name}</h1>
+                {/* <img src={this.state.res_info.featured_image}/> */}
+                {resImg && resImg.slice(0,4).map(photo => (
+                  <>
+                    <img src={photo.photo.url} /> 
+                    <p>hey</p>
+                  </>
+                ))}
             </div>
         )
     }
