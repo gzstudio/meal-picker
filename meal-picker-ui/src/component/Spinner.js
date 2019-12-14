@@ -1,7 +1,11 @@
 import React from 'react'
 import './Spinner.css'
+import { Link } from '@reach/router'
+import PropTypes from 'prop-types';
+
 
 class Spinner extends React.Component {
+  
     constructor(props) {
         super(props);
         console.log(this.props.items.length)
@@ -29,7 +33,7 @@ class Spinner extends React.Component {
         } else {
           this.setState({ selectedItem: null });
           setTimeout(this.selectItem, 500);
-          console.log("this.selecteditem ---> " + this.selectedItem);
+          // console.log("this.selecteditem ---> " + this.selectedItem);
         }
       }
     
@@ -48,17 +52,30 @@ class Spinner extends React.Component {
           <div className="wheel-container">
             <div className={`wheel ${spinning}`} ref={this.wheelRef} style={wheelVars} onClick={() => { this.selectItem(); }}>
               {items.map((item, index) => (
-                <div className="wheel-item" key={index} style={{ '--item-nb': index }}>
-                  {item}
+                <div className="wheel-item" key={item.id} style={{ '--item-nb': index }}>
+                  {item.name}
                 </div>
               ))}
             </div>
           </div>
-          <h2>Let's eat {items[this.state.selectedItem]}</h2>
-          {console.log("log items" + items)}
+          <h2>Let's eat <Link to={`/cuisine/${this.state.selectedItem ? items[this.state.selectedItem].id : null}`}> {this.state.selectedItem && items[this.state.selectedItem].name}</Link></h2>
           </React.Fragment>
         );
       }
+};
+
+Spinner.propTypes = {
+  items: PropTypes.array
+}
+
+Spinner.defaultProps = {
+  items: [{
+    '0': {
+      name: '',
+      id: null
+    }
+  }]
+
 }
 
 

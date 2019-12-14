@@ -27,7 +27,7 @@ class Home extends React.Component {
            .then(response => {
                const cuisineName = response.data.cuisines;
                this.setState({favCuisines: cuisineName})
-               console.log(this.state.favCuisines)
+              //  console.log(this.state.favCuisines)
            })
            .catch(error => {   
              console.log(error);
@@ -38,21 +38,18 @@ class Home extends React.Component {
       
       render(props) {
         const sample = _.sampleSize(this.state.favCuisines, 15)
-        console.log(sample)
-        const getName = sample.map((e, id) => (
-        <p key={id}>{e.cuisine.cuisine_name}</p> 
-        ))
-        const getnames = sample.map((e, id) => (
-          <p key={id}>{e.cuisine.cuisine_name}</p> 
-          ))
+        // console.log(sample)
+        const getName = sample.map((e) => {
+          
+            return {name: e.cuisine.cuisine_name, id: e.cuisine.cuisine_id}
+        });
+        // console.log(getName)
         return (
             <div className="App">
               <h1>What should I eat for </h1>
               <Spinner items={getName} />
               <div>
-               <ul>
-                {getnames}
-               </ul>
+  
             </div>
             </div>
             

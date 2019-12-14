@@ -29,6 +29,7 @@ export default class ResDetails extends React.Component{
 
       }
     render(){
+
         return(
             <div>
                 hello
