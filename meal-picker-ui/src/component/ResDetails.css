@@ -1,7 +1,13 @@
 .gal-holder{
-    max-height: 680px;
+    max-height: 600px;
+    overflow: hidden;
+}
+
+.featured-img img{
+
 }
 
 .gal-holder img{
-    max-height: 680px;
+    max-height: 600px;
+    object-fit: cover;
 }
