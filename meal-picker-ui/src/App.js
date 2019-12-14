@@ -6,7 +6,7 @@ import SearchResults from './component/SearchResult'
 import { Router,Link } from '@reach/router'
 import ResDetails from './component/ResDetails'
 import Navigation from './component/Navigation'
-
+import CuisineInfo from './component/CuisineInfo'
 function App() {
   const Homepg =() =>(
     <div>
@@ -34,6 +34,7 @@ function App() {
             <Homepg path="/" />
             <Search path="/search/"/>
             <ResDetails path='/restaurant/:id'/>
+            <CuisineInfo path='/cuisine/:id' />
           </Router>
            
         </div>

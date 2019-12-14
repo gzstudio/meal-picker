@@ -29,6 +29,7 @@ export default class ResDetails extends React.Component{
 
       }
     render(){
+
         return(
             <div>
                 <h1>{this.state.res_info.name}</h1>
