@@ -31,7 +31,7 @@ export default class ResDetails extends React.Component{
     render(){
         return(
             <div>
-                hello
+                <h1>{this.state.res_info.name}</h1>
             </div>
         )
     }

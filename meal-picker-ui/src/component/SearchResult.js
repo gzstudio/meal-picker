@@ -49,12 +49,16 @@ export default class SearchResult extends React.Component{
         return(
         <div>
             <div>
-            <input type='text' onChange={this.searchHandler}></input>
-            <button onClick={this.handleChange}>Search</button>
+            <input type='text' className="form-control form-control-lg col-6" placeholder="What do you like to eat?" onChange={this.searchHandler}></input>
+            <button className="btn btn-primary btn-lg" onClick={this.handleChange}>Search</button>
             </div>
             <br/>
             <div>
             <div className="row">
+            <h1>Sushi places in Sydney</h1>
+            </div>
+            <div className="row">
+            
                 {getName}
              </div>    
             </div>

@@ -11,7 +11,8 @@ class Home extends React.Component {
         super();
         this.places = ['Thai', 'Italian', 'Japanese', 'Brazillian', 'Mexican', 'Fastfood', 'Chinese', 'Pizza', 'Healthy'];
         this.state = {
-        favCuisines: []
+        favCuisines: [],
+        hour: null
       }
       }
       componentDidMount(){
@@ -32,10 +33,19 @@ class Home extends React.Component {
            .catch(error => {   
              console.log(error);
            });
-  
+
+           this.getHour()
 
       }
       
+      getHour = () => {
+        const date = new Date();
+        const hour = date.getHours()
+        this.setState({
+           hour
+        });
+       }
+
       render(props) {
         const sample = _.sampleSize(this.state.favCuisines, 15)
         console.log(sample)
@@ -47,13 +57,11 @@ class Home extends React.Component {
           ))
         return (
             <div className="App">
-              <h1>What should I eat for </h1>
+              <h1>What should I eat for 
+              {this.state.hour < 10 ? ` breakfast` : (this.state.hour > 10 && this.state.hour < 14 ? (this.state.hour > 14 ? ` dinner`(` lunch`):` lunch`) :null)} ?
+              </h1>
               <Spinner items={getName} />
-              <div>
-               <ul>
-                {getnames}
-               </ul>
-            </div>
+              <button type="button" className="btn btn-primary btn-lg">Show me places!</button>
             </div>
             
           );

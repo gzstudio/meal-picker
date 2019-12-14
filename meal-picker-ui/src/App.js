@@ -5,30 +5,29 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchResults from './component/SearchResult'
 import { Router,Link } from '@reach/router'
 import ResDetails from './component/ResDetails'
+import Navigation from './component/Navigation'
 
 function App() {
   const Homepg =() =>(
     <div>
-      <nav>
-        <Link to="/">Home</Link>| 
-        <Link to="/search/">Search</Link>|
-        <Link to="/">Logout</Link>
-      </nav>
+      <Navigation/>
+      <div className="container">
       <Home/>
+      </div>
+      
     </div>
   )
 
   const Search =()=>(
     <div>
-      <nav>
-          <Link to="/">Home</Link>| 
-          <Link to="/search/">Search</Link>|
-          <Link to="/">Logout</Link>
-        </nav>
-        <SearchResults />
+      <Navigation/>
+      <div className="container">
+      <SearchResults />
+      </div>
+        
     </div>
-      
   )
+
   return (
         <div className="App">
           <Router>

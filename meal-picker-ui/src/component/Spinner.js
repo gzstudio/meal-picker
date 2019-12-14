@@ -55,7 +55,7 @@ class Spinner extends React.Component {
             </div>
           </div>
           <h2>Let's eat {items[this.state.selectedItem]}</h2>
-          {console.log("log items" + items)}
+          
           </React.Fragment>
         );
       }
