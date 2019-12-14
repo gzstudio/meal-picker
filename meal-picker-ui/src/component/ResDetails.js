@@ -39,18 +39,18 @@ export default class ResDetails extends React.Component{
             
             <div className="container-fluid gal-holder no-gutters p-0">
                 <div className="row no-gutters">
-                <div className="col-6"><img className="img-fluid featured-img" src={this.state.res_info.featured_image} /></div>
+                <div className="col-lg-6 col-md-9 col-sm-12"><img className="img-fluid featured-img" src={this.state.res_info.featured_image} /></div>
                 <div className="col-3 no-gutters">
                     {resImg && resImg.slice(0,2).map(photo => (
                     <>
-                    <div className="col-12"><img className="img-fluid" src={photo.photo.url} /></div>
+                    <div className="col-12"><img className="img-fluid small-img" src={photo.photo.url} /></div>
                     </>
                     ))}
                 </div>
                 <div className="col-3 no-gutters">
                     {resImg && resImg.slice(2,4).map(photo => (
                     <>
-                    <div className="col-12"><img className="img-fluid" src={photo.photo.url} /></div>
+                    <div className="col-12"><img className="img-fluid small-img" src={photo.photo.url} /></div>
                     </>
                     ))}
                 </div>
@@ -66,7 +66,7 @@ export default class ResDetails extends React.Component{
                         {this.state.res_info.timings}
                     </div>
                     <div className="col-6">
-                        <p>{this.state.res_info.location.address}</p>
+                        {/* <p>{this.state.res_info.location.address}</p> */}
                     </div>
                 </div>
                 
