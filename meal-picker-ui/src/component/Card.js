@@ -23,6 +23,7 @@ class Card extends React.Component {
                 <div className="card-img--hover">
                 {/* <img src={this.props.card_img} /> */}
                 </div>
+                
             <div className="card-info">
                 <span className="cuisine">{this.props.cuisine}</span>
                 <h3 className="resturant-title">{this.props.resturant_title}</h3>

@@ -1,0 +1,2 @@
+module FavFoodHelper
+end
