@@ -1,5 +1,8 @@
 import React from 'react'
 import Axios from 'axios'
+import Navigation from './Navigation'
+import './ResDetails.css'
+
 
 export default class ResDetails extends React.Component{
    
@@ -29,11 +32,44 @@ export default class ResDetails extends React.Component{
 
       }
     render(){
-
+        // if(this.state.res_info !== null){
+        //     const photos = this.state.res_info.map(e => {
+        //         console.log(e.photos)
+        //     })
+        // }
         return(
-            <div>
-                <h1>{this.state.res_info.name}</h1>
+            <React.Fragment>
+            <Navigation />
+            <div className="container-fluid gal-holder no-gutters">
+                <div className="row no-gutters">
+                <div className="col-6"><img className="img-fluid" src={this.state.res_info.featured_image} /></div>
+                <div className="col-3 no-gutters">
+                <div className="col-12"><img className="img-fluid" src={this.state.res_info.featured_image} /></div>
+                <div className="col-12"><img className="img-fluid" src={this.state.res_info.featured_image} /></div>
+                </div>
+                <div className="col-3 no-gutters">
+                <div className="col-12"><img className="img-fluid" src={this.state.res_info.featured_image} /></div>
+                <div className="col-12"><img className="img-fluid" src={this.state.res_info.featured_image} /></div>
+                </div>
+                </div>
             </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-6">
+                        <p>{this.state.res_info.cuisines}</p>
+                        <h1>{this.state.res_info.name}</h1>
+                        <p>{this.state.res_info.highlights}</p>
+                        <h3>Opening Hours</h3>
+                        {this.state.res_info.timings}
+                    </div>
+                    <div className="col-6">
+                        {/* <p>{this.state.res_info.location.address}</p> */}
+                    </div>
+                </div>
+                
+            </div>
+            </React.Fragment>
         )
     }
 }
+

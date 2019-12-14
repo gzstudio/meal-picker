@@ -4,7 +4,7 @@ import {Link} from '@reach/router';
 class Navigation extends React.Component {
     render() {
         return(
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" to="/">Home</Link>
