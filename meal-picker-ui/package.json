@@ -1,6 +1,7 @@
 {
   "name": "meal-picker-ui",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@reach/router": "^1.2.1",
