@@ -1,5 +1,8 @@
 import React from 'react'
 import Axios from 'axios'
+import Navegation from './Navigation'
+import Card from './Card'
+import { Link } from '@reach/router'
 export default class CuisineInfo extends React.Component{
     state ={
         cuisine_info: []
@@ -17,7 +20,7 @@ export default class CuisineInfo extends React.Component{
                }
              })
                .then(response => {
-                   const resInformation = response.data;
+                   const resInformation = response.data.restaurants;
                    this.setState({cuisine_info: resInformation})
                    console.log(this.state.cuisine_info)
                })
@@ -28,9 +31,20 @@ export default class CuisineInfo extends React.Component{
     
         }
     render(){
+        const getResult = this.state.cuisine_info.map(e =>{
+            return e.restaurant
+        })
+        const getInfo = getResult.map((r) =>  <div className="col-4" key={r.id}>
+        <Link to={'/restaurant/'+ r.id}><Card  resturant_title={r.name} cuisine={r.cuisines} location_name={r.location.address}
+         card_img={r.featured_image} /></Link>
+        </div> )
         return(
             <div>
-                <p>hello from CuisineInfo</p>
+                <Navegation />
+                <h1>Search Results</h1>
+                <div className="row">
+                    {getInfo}
+                </div>
             </div>
         )
     }

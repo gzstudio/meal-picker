@@ -41,8 +41,6 @@ export default class SearchResult extends React.Component{
         const getResp = dataAPI.map(e => {
             return e.restaurant
         })
-
-    
         const getName = getResp.map((j)=>  <div className="col-4" key={j.id}>
         <Link class="card-link" to={'/restaurant/'+ j.id}><Card  resturant_title={j.name} cuisine={j.cuisines} location_name={j.location.address}
          card_img={j.featured_image} /></Link>
