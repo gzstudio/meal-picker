@@ -2,6 +2,7 @@ import React from 'react'
 import Card from './Card'
 import Axios from 'axios'
 import { Link } from '@reach/router'
+import './SearchResult.css'
 export default class SearchResult extends React.Component{
     state = {
         cityData: [],
@@ -43,14 +44,14 @@ export default class SearchResult extends React.Component{
 
     
         const getName = getResp.map((j)=>  <div className="col-4" key={j.id}>
-        <Link to={'/restaurant/'+ j.id}><Card  resturant_title={j.name} cuisine={j.cuisines} location_name={j.location.address}
+        <Link class="card-link" to={'/restaurant/'+ j.id}><Card  resturant_title={j.name} cuisine={j.cuisines} location_name={j.location.address}
          card_img={j.featured_image} /></Link>
         </div> )
         return(
-        <div>
-            <div>
-            <input type='text' className="form-control form-control-lg col-6" placeholder="What do you like to eat?" onChange={this.searchHandler}></input>
-            <button className="btn btn-primary btn-lg" onClick={this.handleChange}>Search</button>
+        <div className="container search-results">
+            <div class="row">
+            <input type='text' className="form-control form-control-lg col-6 offset-2" placeholder="What do you like to eat?" onChange={this.searchHandler}></input>
+            <button className="btn btn-primary btn-lg col-1" onClick={this.handleChange}>Search</button>
             </div>
             <br/>
             <div>
@@ -58,7 +59,6 @@ export default class SearchResult extends React.Component{
             <h1>Sushi places in Sydney</h1>
             </div>
             <div className="row">
-            
                 {getName}
              </div>    
             </div>

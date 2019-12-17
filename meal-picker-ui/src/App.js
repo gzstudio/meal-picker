@@ -7,6 +7,7 @@ import { Router,Link } from '@reach/router'
 import ResDetails from './component/ResDetails'
 import Navigation from './component/Navigation'
 import CuisineInfo from './component/CuisineInfo'
+
 function App() {
   const Homepg =() =>(
     <div>

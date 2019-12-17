@@ -19,7 +19,7 @@ class Card extends React.Component {
             <div className="card-img">
                 <img className="img-fluid" src={this.props.card_img} />
             </div>
-            <span  className="card-link">
+            <span className="card-link">
                 <div className="card-img--hover">
                 {/* <img src={this.props.card_img} /> */}
                 </div>

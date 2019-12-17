@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from '@reach/router';
+import './Navigation.css'
 
 class Navigation extends React.Component {
     render() {
@@ -7,7 +8,7 @@ class Navigation extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/"><img src="../logo.svg"></img></Link>
               </li>
               <li className="nav-item">
               <Link className="nav-link" to="/search/">Search</Link>
@@ -17,6 +18,7 @@ class Navigation extends React.Component {
               </li>
             </ul>
             </nav>
+
         )
     }
 }

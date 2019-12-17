@@ -56,7 +56,7 @@ export default class ResDetails extends React.Component{
                 </div>
                 </div>
             </div>
-            <div className="container">
+            <div className="container res-details">
                 <div className="row">
                     <div className="col-6">
                         <p>{this.state.res_info.cuisines}</p>

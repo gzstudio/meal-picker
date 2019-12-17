@@ -1,5 +1,9 @@
+html {
+  background-color:#EDF0F2;
+}
 .App {
-  /* text-align: center; */
+  text-align: center;
+  background-color:#EDF0F2;
 }
 
 .App-logo {
