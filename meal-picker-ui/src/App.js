@@ -7,6 +7,7 @@ import { Router,Link } from '@reach/router'
 import ResDetails from './component/ResDetails'
 import Navigation from './component/Navigation'
 import CuisineInfo from './component/CuisineInfo'
+import SearchLocation from './component/SearchLocation';
 
 function App() {
   const Homepg =() =>(
@@ -36,6 +37,7 @@ function App() {
             <Search path="/search/"/>
             <ResDetails path='/restaurant/:id'/>
             <CuisineInfo path='/cuisine/:id' />
+            <SearchLocation path="/searchlocation/" />
           </Router>
            
         </div>
