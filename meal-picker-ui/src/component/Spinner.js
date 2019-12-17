@@ -17,11 +17,8 @@ class Spinner extends React.Component {
       }
       
       UNSAFE_componentWillReceiveProps(props) {
-        console.log('componentWillReceiveProps: ' + props.items.length);
         this.setState(state => ({...state, wheelRefs: props.items.map((item) => React.createRef())}))
       }
-
-      
 
        selectItem() {
         if (this.state.selectedItem === null) {
@@ -33,7 +30,6 @@ class Spinner extends React.Component {
         } else {
           this.setState({ selectedItem: null });
           setTimeout(this.selectItem, 500);
-          // console.log("this.selecteditem ---> " + this.selectedItem);
         }
       }
     

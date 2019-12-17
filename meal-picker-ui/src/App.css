@@ -1,9 +1,17 @@
 html {
-  background-color:#EDF0F2;
+  background-color:#F0E7DC;
 }
+
+mark {
+  display: inline-block;
+  line-height: 0em;
+  padding-bottom: 0.5em;
+  background-color: #FFD000 !important;
+}
+
 .App {
   text-align: center;
-  background-color:#EDF0F2;
+  background-color:#F0E7DC;
 }
 
 .App-logo {
@@ -43,4 +51,8 @@ html {
 
 h2{
   font-family: 'Arvo', serif;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
 }

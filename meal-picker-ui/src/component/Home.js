@@ -60,7 +60,7 @@ class Home extends React.Component {
               {this.state.hour < 10 ? ` breakfast` : (this.state.hour > 10 && this.state.hour < 14 ? (this.state.hour > 14 ? ` dinner`(` lunch`):` lunch`) :null)} ?
               </h1>
               <Spinner items={getName} />
-              <button type="button" className="btn btn-primary btn-lg">Show me places!</button>
+            
             </div>
             
           );

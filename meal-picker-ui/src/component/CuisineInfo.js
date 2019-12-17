@@ -3,6 +3,8 @@ import Axios from 'axios'
 import Navegation from './Navigation'
 import Card from './Card'
 import { Link } from '@reach/router'
+import './CuisineInfo.css'
+
 export default class CuisineInfo extends React.Component{
     state ={
         cuisine_info: []
@@ -35,15 +37,17 @@ export default class CuisineInfo extends React.Component{
             return e.restaurant
         })
         const getInfo = getResult.map((r) =>  <div className="col-4" key={r.id}>
-        <Link to={'/restaurant/'+ r.id}><Card  resturant_title={r.name} cuisine={r.cuisines} location_name={r.location.address}
+        <Link className="card-link" to={'/restaurant/'+ r.id}><Card  resturant_title={r.name} cuisine={r.cuisines} location_name={r.location.locality}
          card_img={r.featured_image} /></Link>
         </div> )
         return(
             <div>
                 <Navegation />
-                <h1>Search Results</h1>
+                <div className="container">
+                <h1><mark>Search Results</mark></h1>
                 <div className="row">
                     {getInfo}
+                </div>
                 </div>
             </div>
         )

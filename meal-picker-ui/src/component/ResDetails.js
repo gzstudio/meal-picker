@@ -3,11 +3,13 @@ import Axios from 'axios'
 import Navigation from './Navigation'
 import './ResDetails.css'
 import _ from 'lodash'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
 export default class ResDetails extends React.Component{
    
    state={
-       res_info:[]
+       res_info:[],
+       res_tags:[]
    }
    
     async componentDidMount(){
@@ -28,13 +30,28 @@ export default class ResDetails extends React.Component{
            .catch(error => {   
              console.log(error);
            });
+
+           
+        let resTags = this.state.res_info.cuisines
+        resTags = resTags.split(', ');
+        console.log(resTags)
+        this.setState({res_tags: resTags})
+
+        let credit = this.state.res_info.highlights.filter(highlight => highlight == 'Credit card') 
+        let credit2 = this.state.res_info.highlights.includes('credit card') 
+           console.log(credit);
+           console.log(credit2);
   
 
       }
 
     render(){
         let resImg = this.state.res_info.photos
+<<<<<<< HEAD
 
+=======
+        const credit_card = <FontAwesomeIcon icon={faCreditCard} />
+>>>>>>> ab69b24aab7f78eaa971556f48401ef12db45a16
         return(
             <React.Fragment>
             <Navigation />
@@ -60,10 +77,24 @@ export default class ResDetails extends React.Component{
             </div>
             <div className="container res-details">
                 <div className="row">
-                    <div className="col-6">
-                        <p>{this.state.res_info.cuisines}</p>
-                        <h1>{this.state.res_info.name}</h1>
-                        <p>{this.state.res_info.highlights}</p>
+                    <div className="col-6 text-left">
+                        {
+                            this.state.res_tags.map(tag => (
+                                <span className="badge badge-dark">{tag}</span>
+                            ))
+                        }
+                        <h1 className="res-name">{this.state.res_info.name}</h1>
+                        <div className="highlight">
+                            {
+                                
+                                
+                                }
+
+                                 
+                                
+                            
+                        </div>
+                        <p>{console.log(this.state.res_info.highlights)}</p>
                         <h3>Opening Hours</h3>
                         {this.state.res_info.timings}
                     </div>
