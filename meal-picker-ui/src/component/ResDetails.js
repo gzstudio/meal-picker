@@ -31,8 +31,10 @@ export default class ResDetails extends React.Component{
   
 
       }
+
     render(){
         let resImg = this.state.res_info.photos
+
         return(
             <React.Fragment>
             <Navigation />
@@ -66,7 +68,7 @@ export default class ResDetails extends React.Component{
                         {this.state.res_info.timings}
                     </div>
                     <div className="col-6">
-                        {/* <p>{this.state.res_info.location.address}</p> */}
+                        {/* {resAdress && resAdress.map(e => <p>{e.address}</p>)} */}
                     </div>
                 </div>
                 

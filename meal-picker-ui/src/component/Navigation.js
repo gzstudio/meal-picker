@@ -8,7 +8,7 @@ class Navigation extends React.Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="/"><img src="../logo.svg"></img></Link>
+                <Link className="nav-link" to="/home"><img src="../logo.svg"></img></Link>
               </li>
               <li className="nav-item">
               <Link className="nav-link" to="/search/">Search</Link>

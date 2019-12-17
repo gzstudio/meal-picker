@@ -27,7 +27,7 @@ export default class CuisineInfo extends React.Component{
                .catch(error => {   
                  console.log(error);
                });
-      
+
     
         }
     render(){
