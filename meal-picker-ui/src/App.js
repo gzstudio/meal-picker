@@ -7,6 +7,7 @@ import { Router,Link } from '@reach/router'
 import ResDetails from './component/ResDetails'
 import Navigation from './component/Navigation'
 import CuisineInfo from './component/CuisineInfo'
+import Login from './component/Login'
 import SearchLocation from './component/SearchLocation';
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
   return (
         <div className="App">
           <Router>
-            <Homepg path="/" />
+            <Login path="/" />
+            <Homepg path="/home" />
             <Search path="/search/"/>
             <ResDetails path='/restaurant/:id'/>
             <CuisineInfo path='/cuisine/:id' />
