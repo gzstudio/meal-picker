@@ -14,6 +14,10 @@ class Navigation extends React.Component {
               <Link className="nav-link" to="/search/">Search</Link>
               </li>
               <li className="nav-item">
+              <Link className="nav-link" to="/searchlocation/">Search by Location</Link>
+              </li>
+              
+              <li className="nav-item">
               <Link className="nav-link" to="/">Logout</Link>
               </li>
             </ul>
