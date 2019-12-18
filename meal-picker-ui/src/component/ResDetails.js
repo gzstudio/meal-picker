@@ -47,11 +47,9 @@ export default class ResDetails extends React.Component{
 
     render(){
         let resImg = this.state.res_info.photos
-<<<<<<< HEAD
 
-=======
+
         const credit_card = <FontAwesomeIcon icon={faCreditCard} />
->>>>>>> ab69b24aab7f78eaa971556f48401ef12db45a16
         return(
             <React.Fragment>
             <Navigation />
