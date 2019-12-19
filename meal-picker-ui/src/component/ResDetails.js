@@ -122,6 +122,7 @@ export default class ResDetails extends React.Component{
                         </GoogleMapReact>
                         {console.log(this.state.res_info.name)}
                         </div>
+
                     </div>
                 </div>
                 
