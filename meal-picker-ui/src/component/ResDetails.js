@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard,faUtensils,faChild } from '@fortawesome/free-solid-svg-icons'
 import GoogleMapReact from 'google-map-react'
 import { MapPin } from 'react-feather' 
+import Marker from './Marker'
 
 export default class ResDetails extends React.Component{
 
@@ -72,6 +73,7 @@ export default class ResDetails extends React.Component{
         let resImg = this.state.res_info.photos
         
         return(
+            
             <React.Fragment>
             <Navigation />
             <div className="container-fluid gal-holder no-gutters p-0">
@@ -121,10 +123,14 @@ export default class ResDetails extends React.Component{
                             bootstrapURLKeys={{ key: 'AIzaSyCSiEcD8DEt-tw_ubWXsZFDkIei5gGpbCM' }}
                             center={this.state.center}
                             zoom={this.state.zoom}
-                            text={this.state.res_info.name}
-                            
+                            text={this.state.res_info.name} 
                         >
-                        
+                        <Marker
+                            lat={this.state.center.lat}
+                            lng={this.state.center.lng}
+                            name={this.state.res_info.name}
+                            color="#FFD000"
+                        />
                         </GoogleMapReact>
                      
                         </div>
