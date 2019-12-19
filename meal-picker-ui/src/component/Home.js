@@ -55,9 +55,11 @@ class Home extends React.Component {
         });
         // console.log(getName)
         return (
+          console.log("pitt"+date.getHours())
             <div className="App">
               <h1>What should I eat for 
-              {this.state.hour < 10 ? ` breakfast` : (this.state.hour > 10 && this.state.hour < 14 ? (this.state.hour > 14 ? ` dinner`(` lunch`):` lunch`) :null)} ?
+              {this.state.hour < 10 ?  "breakfast" : "test"}
+             // (this.state.hour > 14 ? ` dinner`(` lunch`):` lunch`) :null)} ?
               </h1>
               <Spinner items={getName} />
             

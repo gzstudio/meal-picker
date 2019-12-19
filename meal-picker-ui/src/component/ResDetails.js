@@ -5,13 +5,22 @@ import './ResDetails.css'
 import _ from 'lodash'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+import GoogleMapReact from 'google-map-react'
+import { MapPin  } from 'react-feather' 
+
 export default class ResDetails extends React.Component{
-   
+
    state={
        res_info:[],
-       res_tags:[]
+       res_tags:[],
+       address: '',
+       center: {
+            lat: 0,
+            lng: 0
+       },
+       zoom: 18,
+       showCreditCard:false
    }
-   
     async componentDidMount(){
         const url_key = 'ce01c524c280392f934d5bb8228b2277'
         await Axios({
@@ -25,7 +34,6 @@ export default class ResDetails extends React.Component{
            .then(response => {
                const resInformation = response.data;
                this.setState({res_info: resInformation})
-               console.log(this.state.res_info)
            })
            .catch(error => {   
              console.log(error);
@@ -36,21 +44,29 @@ export default class ResDetails extends React.Component{
         resTags = resTags.split(', ');
         console.log(resTags)
         this.setState({res_tags: resTags})
+        
+        let address = this.state.res_info.location.address
+        this.setState({address: address})
+        let lat = parseFloat(this.state.res_info.location.latitude)
+        let lng = parseFloat(this.state.res_info.location.longitude)
+        this.setState({center: { lat:lat, lng:lng}})
 
-        let credit = this.state.res_info.highlights.filter(highlight => highlight == 'Credit card') 
-        let credit2 = this.state.res_info.highlights.includes('credit card') 
-           console.log(credit);
-           console.log(credit2);
-  
+        this.displayHighlight();
+        }
 
-      }
-    render(){
+        displayHighlight() {
+            const credit_card = <FontAwesomeIcon icon={faCreditCard} />
+
+            if(this.state.res_info.highlights.includes('Credit Card') )  {
+                this.setState({showCreditCard:false});
+            }
+        }
+    render() {
         let resImg = this.state.res_info.photos
-        const credit_card = <FontAwesomeIcon icon={faCreditCard} />
+        
         return(
             <React.Fragment>
             <Navigation />
-            
             <div className="container-fluid gal-holder no-gutters p-0">
                 <div className="row no-gutters">
                 <div className="col-lg-6 col-md-9 col-sm-12"><img className="img-fluid featured-img" src={this.state.res_info.featured_image} /></div>
@@ -80,10 +96,11 @@ export default class ResDetails extends React.Component{
                         }
                         <h1 className="res-name">{this.state.res_info.name}</h1>
                         <div className="highlight">
-                            {
+                            
+                               
                                 
                                 
-                                }
+                                {this.state.showCreditCard?<FontAwesomeIcon icon={faCreditCard} />:""}
 
                                  
                                 
@@ -93,8 +110,18 @@ export default class ResDetails extends React.Component{
                         <h3>Opening Hours</h3>
                         {this.state.res_info.timings}
                     </div>
-                    <div className="col-6">
-                        {/* <p>{this.state.res_info.location.address}</p> */}
+                    <div className="col-6 text-left">
+                        <p className="address"><span className="pin"><MapPin /></span>{this.state.address}</p>
+                        <div className="map-holder" style={{ height: '450px', width: '100%' }}>
+                        <GoogleMapReact
+                            bootstrapURLKeys={{ key: 'AIzaSyCSiEcD8DEt-tw_ubWXsZFDkIei5gGpbCM' }}
+                            center={this.state.center}
+                            zoom={this.state.zoom}
+                            text={this.state.res_info.name}
+                        >
+                        </GoogleMapReact>
+                        {console.log(this.state.res_info.name)}
+                        </div>
                     </div>
                 </div>
                 
@@ -102,5 +129,7 @@ export default class ResDetails extends React.Component{
             </React.Fragment>
         )
     }
+    
 }
+
 

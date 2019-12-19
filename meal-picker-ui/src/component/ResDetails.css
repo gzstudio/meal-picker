@@ -38,3 +38,21 @@
 .res-name{
     padding-top:20px;
 }
+
+.map-holder{
+    margin-bottom: 40px;
+}
+
+.pin {
+    float: left;
+    padding-right: 4px;
+    margin-top: -4px;
+}
+
+.address {
+    font-family: OpenSans-Semibold;
+    font-size: 14px;
+    color: #7C7C7C;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
