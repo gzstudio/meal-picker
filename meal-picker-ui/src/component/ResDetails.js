@@ -4,9 +4,9 @@ import Navigation from './Navigation'
 import './ResDetails.css'
 import _ from 'lodash'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCreditCard } from '@fortawesome/free-solid-svg-icons'
+import { faCreditCard,faUtensils,faChild } from '@fortawesome/free-solid-svg-icons'
 import GoogleMapReact from 'google-map-react'
-import { MapPin  } from 'react-feather' 
+import { MapPin } from 'react-feather' 
 
 export default class ResDetails extends React.Component{
 
@@ -19,7 +19,9 @@ export default class ResDetails extends React.Component{
             lng: 0
        },
        zoom: 18,
-       showCreditCard:false
+       showCreditCard:false,
+       showTakeaway: false,
+       showKid:false
    }
     async componentDidMount(){
         const url_key = 'ce01c524c280392f934d5bb8228b2277'
@@ -55,10 +57,15 @@ export default class ResDetails extends React.Component{
         }
 
         displayHighlight() {
-            const credit_card = <FontAwesomeIcon icon={faCreditCard} />
 
             if(this.state.res_info.highlights.includes('Credit Card') )  {
-                this.setState({showCreditCard:false});
+                this.setState({showCreditCard:true});
+            }
+            if(this.state.res_info.highlights.includes('Takeaway Available')) {
+                this.setState({showTakeaway: true});
+            }
+            if(this.state.res_info.highlights.includes('Kid Friendly')) {
+                this.setState({showKid:true});
             }
         }
     render() {
@@ -97,30 +104,29 @@ export default class ResDetails extends React.Component{
                         <h1 className="res-name">{this.state.res_info.name}</h1>
                         <div className="highlight">
                             
-                               
-                                
-                                
-                                {this.state.showCreditCard?<FontAwesomeIcon icon={faCreditCard} />:""}
+                                {this.state.showCreditCard? <div className="highlight-item col-4 text-center"><FontAwesomeIcon icon={faCreditCard} size="2x" /><p>Accept Credit card</p></div>:""}
+                                {this.state.showTakeaway? <div className="highlight-item col-4 text-center"><FontAwesomeIcon icon={faUtensils} size="2x" /><p>Takeaway available</p></div>:""}
+                                {this.state.showKid? <div className="highlight-item col-4 text-center"><FontAwesomeIcon icon={faChild} size="2x" /><p>Kid Friendly </p></div>:""}
 
-                                 
-                                
-                            
                         </div>
-                        <p>{console.log(this.state.res_info.highlights)}</p>
+                      
                         <h3>Opening Hours</h3>
                         {this.state.res_info.timings}
                     </div>
                     <div className="col-6 text-left">
                         <p className="address"><span className="pin"><MapPin /></span>{this.state.address}</p>
+                       
                         <div className="map-holder" style={{ height: '450px', width: '100%' }}>
                         <GoogleMapReact
                             bootstrapURLKeys={{ key: 'AIzaSyCSiEcD8DEt-tw_ubWXsZFDkIei5gGpbCM' }}
                             center={this.state.center}
                             zoom={this.state.zoom}
                             text={this.state.res_info.name}
+                            
                         >
+                        
                         </GoogleMapReact>
-                        {console.log(this.state.res_info.name)}
+                     
                         </div>
 
                     </div>
