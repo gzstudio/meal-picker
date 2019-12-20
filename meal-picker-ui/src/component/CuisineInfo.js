@@ -1,6 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
-import Navegation from './Navigation'
+// import Navegation from './Navigation'
 import Card from './Card'
 import { Link } from '@reach/router'
 import './CuisineInfo.css'
@@ -42,7 +42,7 @@ export default class CuisineInfo extends React.Component{
         </div> )
         return(
             <div>
-                <Navegation />
+                {/* <Navegation /> */}
                 <div className="container">
                 <h1><mark>Search Results</mark></h1>
                 <div className="row">

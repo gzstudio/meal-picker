@@ -2,6 +2,7 @@ import React from 'react'
 import Spinner from './component/Spinner'
 import Axios from 'axios'
 import _ from 'lodash'
+import {Redirect} from '@reach/router'
 // import { Link } from 'react-feather';
 
 
@@ -55,6 +56,8 @@ class Home extends React.Component {
         });
         // console.log(getName)
         return (
+          <>
+            {/* {!this.props.user.isLoggedIn && <Redirect to="/" /> } */}
             <div className="App">
               <h1>What should I eat for 
               {this.state.hour < 10 ? ` breakfast` : this.state.hour >14 ?` dinner`:` lunch`} ?
@@ -62,7 +65,7 @@ class Home extends React.Component {
               <Spinner items={getName} />
             
             </div>
-            
+            </>
           );
 
       }

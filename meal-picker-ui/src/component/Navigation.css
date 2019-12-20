@@ -17,3 +17,8 @@ li .menu-text {
     padding: 18px 24px 0 !important;
 
 }
+
+.user-name{
+    float: right !important;
+    color: grey;
+}

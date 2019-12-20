@@ -1,6 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
-import Navigation from './Navigation'
+// import Navigation from './Navigation'
 import './ResDetails.css'
 import _ from 'lodash'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -75,7 +75,6 @@ export default class ResDetails extends React.Component{
         return(
             
             <React.Fragment>
-            <Navigation />
             <div className="container-fluid gal-holder no-gutters p-0">
                 <div className="row no-gutters">
                 <div className="col-lg-6 col-md-9 col-sm-12"><img className="img-fluid featured-img" src={this.state.res_info.featured_image} /></div>
