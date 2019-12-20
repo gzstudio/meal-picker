@@ -54,9 +54,6 @@ export default class SearchResult extends React.Component{
             <br/>
             <div>
             <div className="row">
-            <h1>Sushi places in Sydney</h1>
-            </div>
-            <div className="row">
                 {getName}
              </div>    
             </div>

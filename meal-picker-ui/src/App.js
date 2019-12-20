@@ -3,7 +3,7 @@ import './App.css';
 import Home from './Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchResults from './component/SearchResult'
-import { Router,Link } from '@reach/router'
+import { Router } from '@reach/router'
 import ResDetails from './component/ResDetails'
 import Navigation from './component/Navigation'
 import CuisineInfo from './component/CuisineInfo'
