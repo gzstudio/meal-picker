@@ -34,10 +34,6 @@ p {
     padding: 20px;
 }
 
-.button-holder button {
-    margin-right: 8px;
-}
-
 .credit {
     position: absolute;
     left: 0;
@@ -48,4 +44,3 @@ p {
 .credit p {
     padding: 10px 20px;
 }
-

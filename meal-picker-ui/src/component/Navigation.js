@@ -27,17 +27,23 @@ class Navigation extends React.Component {
                   <li className="nav-item">
                   <Link className="nav-link menu-text" to="/searchlocation/">Search by Location</Link>
                   </li> 
+                  
+                  <li className="nav-item">
+                  <span className="user-name nav-link menu-text">
+                    Hi, {user.currentUser.name}
+                    </span> 
+                  </li>
                     <li className="nav-item" >
                             <Link className='nav-link menu-text' to="/" onClick={(e)=>this.handleLogoutClick(e)}>Logout</Link>
                     </li>
-                    <span className="user-name">
-                    {user.currentUser.name}
-                    </span> 
+                    
                     </>
                 }
               { !user.isLoggedIn &&
               <>
-              
+              <li className="nav-item">
+                    <Link className="nav-link" to="/"><img className="logo" alt="logo" src="../logo.svg"></img></Link>
+                  </li>
               <li className="nav-item">
               <Link className="nav-link menu-text"  to="/signUp">SignUp</Link>
               </li>
